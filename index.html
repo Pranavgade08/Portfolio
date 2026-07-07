@@ -1,0 +1,265 @@
+    <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Your Name | Frontend Developer</title>
+    <meta
+      name="description"
+      content="Personal portfolio website showcasing skills, projects, and contact information."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="Your Name | Portfolio" />
+    <meta
+      property="og:description"
+      content="Personal portfolio website showcasing skills, projects, and contact information."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#home" aria-label="Go to Home">
+          <span class="brand-mark" aria-hidden="true">YN</span>
+          <span class="brand-text">Your Name</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+
+        <div id="nav-menu" class="nav-menu" data-collapsible>
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section hero" aria-label="Introduction">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <p class="kicker">Hi, I’m</p>
+            <h1 class="hero-title">Your Name</h1>
+            <p class="hero-subtitle">Frontend Developer</p>
+            <p class="hero-tagline">
+              I build clean, responsive, and user-friendly web experiences using HTML, CSS, and JavaScript.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact" data-press>Hire Me</a>
+              <a class="btn btn-ghost" href="assets/Resume.pdf" download data-press>Download Resume</a>
+            </div>
+
+            <div class="social-row" aria-label="Social links">
+              <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="social-link" href="mailto:you@example.com">Email</a>
+            </div>
+          </div>
+
+          <div class="hero-card" data-reveal>
+            <div class="stat">
+              <p class="stat-label">Focus</p>
+              <p class="stat-value">Frontend + UI</p>
+            </div>
+            <div class="stat">
+              <p class="stat-label">Strength</p>
+              <p class="stat-value">Responsive Design</p>
+            </div>
+            <div class="stat">
+              <p class="stat-label">Currently</p>
+              <p class="stat-value">Open to Opportunities</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-label="About">
+        <div class="container" data-reveal>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-lead">
+            I’m a motivated developer focused on building fast, accessible, and maintainable web interfaces.
+          </p>
+
+          <div class="card">
+            <p>
+              Add your educational background, your goals, and what you’re passionate about here. Keep it short and
+              impact-focused.
+            </p>
+            <p>
+              Example: “I enjoy turning complex problems into simple, beautiful, and intuitive designs. I’m currently
+              improving my JavaScript skills and building personal projects.”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-label="Skills">
+        <div class="container" data-reveal>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-lead">A snapshot of my technical toolkit.</p>
+
+          <div class="skills-grid">
+            <div class="skill">
+              <div class="skill-head">
+                <span class="skill-name">HTML</span>
+                <span class="skill-level" aria-hidden="true">90%</span>
+              </div>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-head">
+                <span class="skill-name">CSS</span>
+                <span class="skill-level" aria-hidden="true">85%</span>
+              </div>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
+                <div class="bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-head">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-level" aria-hidden="true">75%</span>
+              </div>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
+                <div class="bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-head">
+                <span class="skill-name">Git</span>
+                <span class="skill-level" aria-hidden="true">70%</span>
+              </div>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+                <div class="bar-fill" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint">
+            Tip: Update skill names and percentages directly in <code>index.html</code>.
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-label="Projects">
+        <div class="container" data-reveal>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-lead">Selected work — academic and personal.</p>
+
+          <div class="projects-grid">
+            <article class="project card">
+              <h3 class="project-title">Project One</h3>
+              <p class="project-desc">
+                Short description of what the project does and the problem it solves.
+              </p>
+              <p class="project-tech">Tech: HTML, CSS, JavaScript</p>
+              <div class="project-links">
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>Live Demo</a>
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>GitHub</a>
+              </div>
+            </article>
+
+            <article class="project card">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">
+                Another project summary. Keep it concise and highlight impact.
+              </p>
+              <p class="project-tech">Tech: HTML, CSS</p>
+              <div class="project-links">
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>Live Demo</a>
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>GitHub</a>
+              </div>
+            </article>
+
+            <article class="project card">
+              <h3 class="project-title">Project Three</h3>
+              <p class="project-desc">Add a personal/academic project here.</p>
+              <p class="project-tech">Tech: JavaScript</p>
+              <div class="project-links">
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>Live Demo</a>
+                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-label="Contact">
+        <div class="container" data-reveal>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-lead">Have a question or want to work together? Send a message.</p>
+
+          <div class="contact-grid">
+            <form id="contact-form" class="card form" novalidate>
+              <div class="form-row">
+                <label class="label" for="name">Name</label>
+                <input id="name" name="name" class="input" type="text" autocomplete="name" required />
+                <p class="field-error" data-error-for="name" aria-live="polite"></p>
+              </div>
+
+              <div class="form-row">
+                <label class="label" for="email">Email</label>
+                <input id="email" name="email" class="input" type="email" autocomplete="email" required />
+                <p class="field-error" data-error-for="email" aria-live="polite"></p>
+              </div>
+
+              <div class="form-row">
+                <label class="label" for="subject">Subject</label>
+                <input id="subject" name="subject" class="input" type="text" required />
+                <p class="field-error" data-error-for="subject" aria-live="polite"></p>
+              </div>
+
+              <div class="form-row">
+                <label class="label" for="message">Message</label>
+                <textarea id="message" name="message" class="input" rows="5" required></textarea>
+                <p class="field-error" data-error-for="message" aria-live="polite"></p>
+              </div>
+
+              <button class="btn btn-primary" type="submit" data-press>Send Message</button>
+              <p id="form-status" class="form-status" aria-live="polite"></p>
+            </form>
+
+            <aside class="card contact-card">
+              <h3 class="contact-title">Let’s connect</h3>
+              <p class="contact-text">You can also reach me directly:</p>
+              <div class="contact-links">
+                <a class="social-link" href="mailto:you@example.com">you@example.com</a>
+                <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer">github.com/your-handle</a>
+                <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/your-handle</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+        <a class="to-top" href="#top" data-press>Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
