@@ -5,32 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Your Name | Frontend Developer</title>
+    <title>Pranav Gade | MERN Stack Developer</title>
     <meta
       name="description"
       content="Personal portfolio website showcasing skills, projects, and contact information."
     />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="Your Name | Portfolio" />
+    <meta property="og:title" content="Pranav Gade | Portfolio" />
     <meta
       property="og:description"
       content="Personal portfolio website showcasing skills, projects, and contact information."
     />
     <meta property="og:type" content="website" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="js/three-scene.js"></script>
     <script defer src="js/main.js"></script>
   </head>
 
   <body>
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#home">Skip to content</a>
 
     <header class="site-header" id="top">
       <nav class="nav container" aria-label="Primary">
         <a class="brand" href="#home" aria-label="Go to Home">
-          <span class="brand-mark" aria-hidden="true">YN</span>
-          <span class="brand-text">Your Name</span>
+          <span class="brand-mark" aria-hidden="true">PG</span>
+          <span class="brand-text">Pranav Gade</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
@@ -55,8 +64,8 @@
         <div class="container hero-grid">
           <div class="hero-copy" data-reveal>
             <p class="kicker">Hi, I’m</p>
-            <h1 class="hero-title">Your Name</h1>
-            <p class="hero-subtitle">Frontend Developer</p>
+            <h1 class="hero-title">Pranav Gade</h1>
+            <p class="hero-subtitle">MERN Stack Developer</p>
             <p class="hero-tagline">
               I build clean, responsive, and user-friendly web experiences using HTML, CSS, and JavaScript.
             </p>
@@ -67,24 +76,27 @@
             </div>
 
             <div class="social-row" aria-label="Social links">
-              <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">GitHub</a>
               <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
               <a class="social-link" href="mailto:you@example.com">Email</a>
             </div>
           </div>
 
-          <div class="hero-card" data-reveal>
-            <div class="stat">
-              <p class="stat-label">Focus</p>
-              <p class="stat-value">Frontend + UI</p>
-            </div>
-            <div class="stat">
-              <p class="stat-label">Strength</p>
-              <p class="stat-value">Responsive Design</p>
-            </div>
-            <div class="stat">
-              <p class="stat-label">Currently</p>
-              <p class="stat-value">Open to Opportunities</p>
+          <div class="hero-visual-wrapper" data-reveal>
+            <div id="canvas-3d-container" class="canvas-3d-container"></div>
+            <div class="hero-card glass-card">
+              <div class="stat">
+                <p class="stat-label">Focus</p>
+                <p class="stat-value">Frontend &amp; UI</p>
+              </div>
+              <div class="stat">
+                <p class="stat-label">Strength</p>
+                <p class="stat-value">Interactive 3D</p>
+              </div>
+              <div class="stat">
+                <p class="stat-label">Currently</p>
+                <p class="stat-value">Open to Opportunities</p>
+              </div>
             </div>
           </div>
         </div>
@@ -170,14 +182,13 @@
 
           <div class="projects-grid">
             <article class="project card">
-              <h3 class="project-title">Project One</h3>
+              <h3 class="project-title">Report Writing Portal</h3>
               <p class="project-desc">
-                Short description of what the project does and the problem it solves.
+                A secure web application designed to write, manage, and submit academic and organizational reports, featuring role-based workflows and status dashboards.
               </p>
-              <p class="project-tech">Tech: HTML, CSS, JavaScript</p>
+              <p class="project-tech">Tech: PHP, MySQL, JavaScript, CSS</p>
               <div class="project-links">
-                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>Live Demo</a>
-                <a class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noreferrer" data-press>GitHub</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08/Report_Writing_Portal" target="_blank" rel="noreferrer" data-press>GitHub Repository</a>
               </div>
             </article>
 
@@ -246,7 +257,7 @@
               <p class="contact-text">You can also reach me directly:</p>
               <div class="contact-links">
                 <a class="social-link" href="mailto:you@example.com">you@example.com</a>
-                <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer">github.com/your-handle</a>
+                <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">github.com/Pranavgade08</a>
                 <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/your-handle</a>
               </div>
             </aside>
@@ -257,7 +268,7 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+        <p>© <span id="year"></span> Pranav Gade. All rights reserved.</p>
         <a class="to-top" href="#top" data-press>Back to top</a>
       </div>
     </footer>

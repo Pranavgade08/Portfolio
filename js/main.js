@@ -95,6 +95,17 @@
   const year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Scroll progress bar
+  const progressEl = $('#scroll-progress');
+  if (progressEl) {
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressEl.style.width = scrolled + '%';
+    });
+  }
+
   // Contact form validation (client-side only)
   const form = $('#contact-form');
   const status = $('#form-status');
