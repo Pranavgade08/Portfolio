@@ -169,4 +169,56 @@
       Object.keys(validators).forEach((name) => setFieldError(name, ''));
     });
   }
+
+  // Preloader Control - Immediate stagger animation trigger
+  function initPreloader() {
+    const startLoader = () => {
+      document.body.classList.add('is-loaded');
+    };
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      startLoader();
+    } else {
+      window.addEventListener('DOMContentLoaded', startLoader);
+    }
+  }
+  initPreloader();
+
+  // Typewriter Effect
+  const typedSpan = $('.typed-text');
+  if (typedSpan) {
+    const words = ["MERN Stack Developer", "C++ Developer (DSA)", "Full Stack Architect", "Problem Solver"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        typedSpan.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 50; // Delete faster
+      } else {
+        typedSpan.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 100;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typingSpeed = 1600; // Pause at end of word
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typingSpeed = 300; // Pause before typing next word
+      }
+
+      setTimeout(type, typingSpeed);
+    }
+
+    // Delay start of typewriter to sync with entrance stagger
+    setTimeout(type, 800);
+  }
 })();
+
