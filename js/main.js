@@ -184,41 +184,66 @@
   }
   initPreloader();
 
-  // Typewriter Effect
+  // Typewriter Effects (Name first, then Subtitle tags)
+  const nameSpan = $('.typed-name');
+  const nameCursor = $('.name-cursor');
   const typedSpan = $('.typed-text');
-  if (typedSpan) {
-    const words = ["MERN Stack Developer", "C++ Developer (DSA)", "Full Stack Architect", "Problem Solver"];
-    let wordIndex = 0;
+
+  if (nameSpan) {
+    const nameText = "Pranav Gade";
     let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
 
-    function type() {
-      const currentWord = words[wordIndex];
-      if (isDeleting) {
-        typedSpan.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50; // Delete faster
-      } else {
-        typedSpan.textContent = currentWord.substring(0, charIndex + 1);
+    function typeName() {
+      if (charIndex < nameText.length) {
+        nameSpan.textContent += nameText.charAt(charIndex);
         charIndex++;
-        typingSpeed = 100;
+        setTimeout(typeName, 120); // Typing speed for the name
+      } else {
+        // Name typing complete! Hide name cursor
+        if (nameCursor) nameCursor.style.display = 'none';
+        
+        // Start typing subtitle after a brief pause
+        if (typedSpan) {
+          setTimeout(startSubtitleTypewriter, 500);
+        }
       }
-
-      if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        typingSpeed = 1600; // Pause at end of word
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typingSpeed = 300; // Pause before typing next word
-      }
-
-      setTimeout(type, typingSpeed);
     }
 
-    // Delay start of typewriter to sync with entrance stagger
-    setTimeout(type, 800);
+    function startSubtitleTypewriter() {
+      const words = ["MERN Stack Developer", "C++ Developer (DSA)", "Full Stack Architect", "Problem Solver"];
+      let wordIndex = 0;
+      let subCharIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+
+      function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+          typedSpan.textContent = currentWord.substring(0, subCharIndex - 1);
+          subCharIndex--;
+          typingSpeed = 50; // Delete faster
+        } else {
+          typedSpan.textContent = currentWord.substring(0, subCharIndex + 1);
+          subCharIndex++;
+          typingSpeed = 100;
+        }
+
+        if (!isDeleting && subCharIndex === currentWord.length) {
+          isDeleting = true;
+          typingSpeed = 1600; // Pause at end of word
+        } else if (isDeleting && subCharIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typingSpeed = 300; // Pause before typing next word
+        }
+
+        setTimeout(type, typingSpeed);
+      }
+      type();
+    }
+
+    // Delay start of name typing until stagger animation begins
+    setTimeout(typeName, 600);
   }
 })();
 
