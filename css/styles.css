@@ -965,3 +965,91 @@ body.is-loaded .pre-hide.delay-5 { transition-delay: 1.4s; }
   50% { opacity: 0; }
 }
 
+/* About Grid & Resume lists */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-list-item {
+  position: relative;
+  padding-left: 20px;
+}
+
+.about-list-item::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-2);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.about-item-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.about-item-meta {
+  font-size: 0.86rem;
+  color: var(--accent-2);
+  display: block;
+  margin: 2px 0 6px;
+  font-weight: 600;
+}
+
+.about-item-desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cert-item {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.cert-item::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cert-list {
+    grid-template-columns: 1fr;
+  }
+}
+

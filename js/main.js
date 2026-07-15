@@ -170,19 +170,8 @@
     });
   }
 
-  // Preloader Control - Immediate stagger animation trigger
-  function initPreloader() {
-    const startLoader = () => {
-      document.body.classList.add('is-loaded');
-    };
-
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      startLoader();
-    } else {
-      window.addEventListener('DOMContentLoaded', startLoader);
-    }
-  }
-  initPreloader();
+  // Trigger stagger load animations immediately
+  document.body.classList.add('is-loaded');
 
   // Typewriter Effects (Name first, then Subtitle tags)
   const nameSpan = $('.typed-name');
