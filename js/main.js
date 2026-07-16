@@ -190,7 +190,7 @@
       } else {
         // Name typing complete! Hide name cursor
         if (nameCursor) nameCursor.style.display = 'none';
-        
+
         // Start typing subtitle after a brief pause
         if (typedSpan) {
           setTimeout(startSubtitleTypewriter, 500);
