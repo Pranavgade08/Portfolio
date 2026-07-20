@@ -234,5 +234,74 @@
     // Delay start of name typing until stagger animation begins
     setTimeout(typeName, 600);
   }
+
+  // Mouse Spotlight Effect on Cards
+  const cards = $$('.card');
+  cards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+
+  // Project Category Filtering
+  const filterBtns = $$('.filter-btn');
+  const projectCards = $$('.project');
+
+  if (filterBtns.length && projectCards.length) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        projectCards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // Toast Notification System
+  const toast = $('#toast');
+  let toastTimeout = null;
+
+  function showToast(message, duration = 3000) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, duration);
+  }
+
+  // Copy Email to Clipboard
+  const copyEmailBtn = $('#copy-email-btn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'pranavgade0880@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('✓ Email address copied to clipboard!');
+        }).catch(() => {
+          showToast('✓ Email: ' + email);
+        });
+      } else {
+        showToast('✓ Email: ' + email);
+      }
+    });
+  }
 })();
+
 

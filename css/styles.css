@@ -151,9 +151,10 @@ textarea:focus-visible {
   max-width: 65ch;
 }
 
-/* Glassmorphic Card */
+/* Glassmorphic Card with Mouse Spotlight */
 .card {
-  background: var(--card);
+  position: relative;
+  background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.12), transparent 40%), var(--card);
   backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -165,11 +166,11 @@ textarea:focus-visible {
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card:hover {
-  background: var(--card-hover);
-  border-color: rgba(6, 182, 212, 0.25);
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(6, 182, 212, 0.18), transparent 45%), var(--card-hover);
+  border-color: rgba(6, 182, 212, 0.35);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 
               inset 0 1px 0 rgba(255, 255, 255, 0.15), 
-              0 0 30px rgba(6, 182, 212, 0.05);
+              0 0 30px rgba(6, 182, 212, 0.1);
   transform: translateY(-4px);
 }
 
@@ -1043,13 +1044,233 @@ body.is-loaded .pre-hide.delay-5 { transition-delay: 1.4s; }
   font-size: 1.1rem;
 }
 
+/* About Headings & Vertical Timeline */
+.about-section-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -12px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 10px var(--accent-2);
+  border: 2px solid var(--bg);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.02rem;
+}
+
+.timeline-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.timeline-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-2);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+/* Certifications Chips */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cert-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cert-chip:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.chip-icon {
+  color: var(--accent-2);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+/* Project Category Filter Buttons */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* Tech Tags wrapper inside Project Card */
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tech-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-2);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Hide animation for filtered projects */
+.project.is-hidden {
+  display: none !important;
+}
+
+/* Email Copy Box in Contact Card */
+.email-copy-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-copy-box .social-link {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.copy-btn {
+  padding: 10px 12px;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Toast Notification System */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 14px 22px;
+  background: rgba(13, 17, 34, 0.95);
+  border: 1px solid var(--accent-2);
+  color: var(--text);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow-2);
+  font-weight: 700;
+  font-size: 0.92rem;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+}
+
+.toast-notification.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .cert-list {
+  .cert-grid {
     grid-template-columns: 1fr;
   }
 }
+
 

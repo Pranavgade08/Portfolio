@@ -1,24 +1,30 @@
-    <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Pranav Gade | MERN Stack Developer</title>
+    <title>Pranav Gade | MERN Stack & C++ Developer</title>
     <meta
       name="description"
-      content="Personal portfolio website showcasing skills, projects, and contact information."
+      content="Personal portfolio website of Pranav Gade showcasing skills, projects in MERN Stack & C++ DSA, education, and contact information."
     />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#08090f" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%238b5cf6'/><text x='50%' y='68%' font-size='50' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'>PG</text></svg>" />
+
+    <!-- Open Graph Meta -->
     <meta property="og:title" content="Pranav Gade | Portfolio" />
     <meta
       property="og:description"
-      content="Personal portfolio website showcasing skills, projects, and contact information."
+      content="Personal portfolio website showcasing skills, MERN Stack & C++ projects, and contact information."
     />
     <meta property="og:type" content="website" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,16 +32,35 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Three.js Libraries & Custom Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script defer src="js/three-scene.js"></script>
     <script defer src="js/main.js"></script>
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pranav Gade",
+      "jobTitle": "MERN Stack Developer",
+      "sameAs": [
+        "https://github.com/Pranavgade08",
+        "https://www.linkedin.com/in/pranavgade08/"
+      ],
+      "knowsAbout": ["MERN Stack", "React", "Node.js", "MongoDB", "Express", "C++", "DSA", "JavaScript", "PHP", "SQL"]
+    }
+    </script>
   </head>
 
   <body>
-
-
+    <!-- Scroll progress bar -->
     <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notification" role="status" aria-live="polite"></div>
 
     <header class="site-header" id="top">
       <nav class="nav container" aria-label="Primary">
@@ -62,6 +87,7 @@
     </header>
 
     <main>
+      <!-- Hero Section -->
       <section id="home" class="section hero" aria-label="Introduction">
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -71,18 +97,33 @@
               <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">|</span>
             </p>
             <p class="hero-tagline pre-hide delay-3">
-              I build clean, responsive, and user-friendly web experiences using HTML, CSS, and JavaScript.
+              I build clean, responsive, and user-friendly web experiences using HTML, CSS, JavaScript, and MERN stack technologies.
             </p>
 
             <div class="cta-row pre-hide delay-4">
-              <a class="btn btn-primary" href="#contact" data-press>Hire Me</a>
-              <a class="btn btn-ghost" href="assets/Resume.pdf" download data-press>Download Resume</a>
+              <a class="btn btn-primary" href="#contact" data-press>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                Hire Me
+              </a>
+              <a class="btn btn-ghost" href="assets/Resume.pdf" download data-press>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Resume
+              </a>
             </div>
 
             <div class="social-row pre-hide delay-5" aria-label="Social links">
-              <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="social-link" href="https://www.linkedin.com/in/pranavgade08/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a class="social-link" href="mailto:pranavgade0880@gmail.com">Email</a>
+              <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+              <a class="social-link" href="https://www.linkedin.com/in/pranavgade08/" target="_blank" rel="noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+              <a class="social-link" href="mailto:pranavgade0880@gmail.com">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </a>
             </div>
           </div>
 
@@ -98,14 +139,15 @@
                 <p class="stat-value">Interactive 3D</p>
               </div>
               <div class="stat">
-                <p class="stat-label">Currently</p>
-                <p class="stat-value">Open to Opportunities</p>
+                <p class="stat-label">Status</p>
+                <p class="stat-value">Open to Work</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- About Section -->
       <section id="about" class="section" aria-label="About">
         <div class="container" data-reveal>
           <h2 class="section-title">About Me</h2>
@@ -113,58 +155,90 @@
             I’m a motivated developer focused on building fast, accessible, and maintainable web interfaces.
           </p>
 
-          <div class="card">
+          <div class="card about-bio-card">
             <p>
               Hi, I'm <strong>Pranav Gade</strong>, a B.Sc. IT graduate and an aspiring <strong>MERN Stack Developer</strong> passionate about building responsive, secure, and user-friendly web applications. I enjoy solving complex problems with <strong>DSA in C++</strong> and have hands-on experience in backend integration, database design, and local network device tracking.
             </p>
           </div>
 
           <div class="about-grid">
-            <div class="card">
-              <h3 class="about-item-title" style="margin-top:0; margin-bottom:20px; font-family:var(--font-heading); font-size:1.3rem;">Education</h3>
-              <ul class="about-list">
-                <li class="about-list-item">
-                  <span class="about-item-title">Bachelor of Science in Information Technology (B.Sc. IT)</span>
-                  <span class="about-item-meta">Dr. Babasaheb Ambedkar Marathwada University | 2023 - 2026</span>
-                  <span class="about-item-desc">Overall CGPA: 8.61</span>
-                </li>
-                <li class="about-list-item">
-                  <span class="about-item-title">HSC - Science Stream</span>
-                  <span class="about-item-meta">S.B.E.S. College of Science | 2021 - 2023</span>
-                  <span class="about-item-desc">Percentage: 61.72%</span>
-                </li>
-                <li class="about-list-item">
-                  <span class="about-item-title">SSC</span>
-                  <span class="about-item-meta">A.K. Waghmare High School | 2020 - 2021</span>
-                  <span class="about-item-desc">Percentage: 89.43%</span>
-                </li>
-              </ul>
+            <!-- Education Timeline Card -->
+            <div class="card timeline-card">
+              <h3 class="about-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Education
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-title">Bachelor of Science in IT (B.Sc. IT)</span>
+                    <span class="timeline-meta">Dr. Babasaheb Ambedkar Marathwada University</span>
+                    <span class="timeline-badge">2023 - 2026 • CGPA: 8.61</span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-title">HSC - Science Stream</span>
+                    <span class="timeline-meta">S.B.E.S. College of Science</span>
+                    <span class="timeline-badge">2021 - 2023 • 61.72%</span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-title">SSC</span>
+                    <span class="timeline-meta">A.K. Waghmare High School</span>
+                    <span class="timeline-badge">2020 - 2021 • 89.43%</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="card">
-              <h3 class="about-item-title" style="margin-top:0; margin-bottom:20px; font-family:var(--font-heading); font-size:1.3rem;">Certifications</h3>
-              <ul class="cert-list">
-                <li class="cert-item">Core Java</li>
-                <li class="cert-item">CPP Programming</li>
-                <li class="cert-item">Cybersecurity Analyst Job Simulation (TATA)</li>
-                <li class="cert-item">Communication &amp; Presentation Skills (Coursera)</li>
-                <li class="cert-item">C Programming</li>
-                <li class="cert-item">CSS</li>
-              </ul>
+            <!-- Certifications Card -->
+            <div class="card cert-card">
+              <h3 class="about-section-heading">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                Certifications
+              </h3>
+              <div class="cert-grid">
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> Core Java
+                </div>
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> CPP Programming
+                </div>
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> Cybersecurity Analyst Simulation (TATA)
+                </div>
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> Communication Skills (Coursera)
+                </div>
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> C Programming
+                </div>
+                <div class="cert-chip">
+                  <span class="chip-icon">✓</span> CSS Mastery
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Skills Section -->
       <section id="skills" class="section" aria-label="Skills">
         <div class="container" data-reveal>
           <h2 class="section-title">Skills</h2>
-          <p class="section-lead">A snapshot of my technical toolkit.</p>
+          <p class="section-lead">A snapshot of my technical toolkit and proficiency levels.</p>
 
           <div class="skills-grid">
             <div class="skill">
               <div class="skill-head">
-                <span class="skill-name">HTML &amp; CSS</span>
+                <span class="skill-name">HTML5 &amp; CSS3</span>
                 <span class="skill-level" aria-hidden="true">90%</span>
               </div>
               <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
@@ -174,7 +248,7 @@
 
             <div class="skill">
               <div class="skill-head">
-                <span class="skill-name">C++ (DSA)</span>
+                <span class="skill-name">C++ (DSA &amp; OOP)</span>
                 <span class="skill-level" aria-hidden="true">85%</span>
               </div>
               <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
@@ -194,7 +268,7 @@
 
             <div class="skill">
               <div class="skill-head">
-                <span class="skill-name">PHP</span>
+                <span class="skill-name">PHP &amp; Web Backend</span>
                 <span class="skill-level" aria-hidden="true">75%</span>
               </div>
               <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
@@ -204,7 +278,7 @@
 
             <div class="skill">
               <div class="skill-head">
-                <span class="skill-name">SQL</span>
+                <span class="skill-name">SQL &amp; Database Design</span>
                 <span class="skill-level" aria-hidden="true">75%</span>
               </div>
               <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
@@ -214,7 +288,7 @@
 
             <div class="skill">
               <div class="skill-head">
-                <span class="skill-name">Git &amp; GitHub</span>
+                <span class="skill-name">Git &amp; Version Control</span>
                 <span class="skill-level" aria-hidden="true">80%</span>
               </div>
               <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
@@ -222,52 +296,83 @@
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
+      <!-- Projects Section -->
       <section id="projects" class="section" aria-label="Projects">
         <div class="container" data-reveal>
           <h2 class="section-title">Projects</h2>
-          <p class="section-lead">Selected work — academic and personal.</p>
+          <p class="section-lead">Selected work — academic, full-stack, and systems projects.</p>
+
+          <!-- Filter buttons -->
+          <div class="project-filters" aria-label="Project filter options">
+            <button class="filter-btn active" data-filter="all" type="button">All Projects</button>
+            <button class="filter-btn" data-filter="web" type="button">Web &amp; MERN</button>
+            <button class="filter-btn" data-filter="java" type="button">Java &amp; Systems</button>
+          </div>
 
           <div class="projects-grid">
-            <article class="project card">
+            <article class="project card" data-category="web">
               <h3 class="project-title">Event Report Writing System</h3>
               <p class="project-desc">
                 A college-level event report writing system for creating, editing, and managing reports. Features database integration, image uploads, attendance trackers, and exports to PDF formats.
               </p>
-              <p class="project-tech">Tech: PHP, MySQL, HTML, CSS, JavaScript</p>
+              <div class="tags-wrapper">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JS</span>
+                <span class="tech-tag">HTML/CSS</span>
+              </div>
               <div class="project-links">
-                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08/Report_Writing_Portal" target="_blank" rel="noreferrer" data-press>GitHub Repository</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08/Report_Writing_Portal" target="_blank" rel="noreferrer" data-press>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  GitHub Repository
+                </a>
               </div>
             </article>
 
-            <article class="project card">
+            <article class="project card" data-category="web">
               <h3 class="project-title">Lab Report Portal</h3>
               <p class="project-desc">
-                A lab report management system designed to create, store, and manage laboratory reports efficiently. Features AI-based automated report generation, SQL backends, device tracking via IP address, and remote system controls.
+                A lab report management system designed to create, store, and manage laboratory reports efficiently. Features AI-based automated report generation, SQL backends, device tracking via IP address, and remote controls.
               </p>
-              <p class="project-tech">Tech: PHP, SQL, HTML, CSS, AI Integration</p>
+              <div class="tags-wrapper">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">AI Integration</span>
+                <span class="tech-tag">Web</span>
+              </div>
               <div class="project-links">
-                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08/Labproject" target="_blank" rel="noreferrer" data-press>GitHub Repository</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08/Labproject" target="_blank" rel="noreferrer" data-press>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  GitHub Repository
+                </a>
               </div>
             </article>
 
-            <article class="project card">
+            <article class="project card" data-category="java">
               <h3 class="project-title">College Lab Issue System</h3>
               <p class="project-desc">
                 A local network-based application designed to report and monitor laboratory system issues, featuring device tracking that logs device names and IP addresses on a local LAN.
               </p>
-              <p class="project-tech">Tech: Core Java, SQL</p>
+              <div class="tags-wrapper">
+                <span class="tech-tag">Core Java</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Networking</span>
+              </div>
               <div class="project-links">
-                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer" data-press>GitHub Profile</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer" data-press>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  GitHub Profile
+                </a>
               </div>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- Contact Section -->
       <section id="contact" class="section" aria-label="Contact">
         <div class="container" data-reveal>
           <h2 class="section-title">Contact</h2>
@@ -277,39 +382,56 @@
             <form id="contact-form" class="card form" novalidate>
               <div class="form-row">
                 <label class="label" for="name">Name</label>
-                <input id="name" name="name" class="input" type="text" autocomplete="name" required />
+                <input id="name" name="name" class="input" type="text" autocomplete="name" required placeholder="Your Name" />
                 <p class="field-error" data-error-for="name" aria-live="polite"></p>
               </div>
 
               <div class="form-row">
                 <label class="label" for="email">Email</label>
-                <input id="email" name="email" class="input" type="email" autocomplete="email" required />
+                <input id="email" name="email" class="input" type="email" autocomplete="email" required placeholder="you@example.com" />
                 <p class="field-error" data-error-for="email" aria-live="polite"></p>
               </div>
 
               <div class="form-row">
                 <label class="label" for="subject">Subject</label>
-                <input id="subject" name="subject" class="input" type="text" required />
+                <input id="subject" name="subject" class="input" type="text" required placeholder="Project Opportunity / Hello" />
                 <p class="field-error" data-error-for="subject" aria-live="polite"></p>
               </div>
 
               <div class="form-row">
                 <label class="label" for="message">Message</label>
-                <textarea id="message" name="message" class="input" rows="5" required></textarea>
+                <textarea id="message" name="message" class="input" rows="5" required placeholder="Write your message here..."></textarea>
                 <p class="field-error" data-error-for="message" aria-live="polite"></p>
               </div>
 
-              <button class="btn btn-primary" type="submit" data-press>Send Message</button>
+              <button class="btn btn-primary" type="submit" data-press>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </button>
               <p id="form-status" class="form-status" aria-live="polite"></p>
             </form>
 
             <aside class="card contact-card">
               <h3 class="contact-title">Let’s connect</h3>
-              <p class="contact-text">You can also reach me directly:</p>
+              <p class="contact-text">You can also reach me directly via email or social networks:</p>
               <div class="contact-links">
-                <a class="social-link" href="mailto:pranavgade0880@gmail.com">pranavgade0880@gmail.com</a>
-                <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">github.com/Pranavgade08</a>
-                <a class="social-link" href="https://www.linkedin.com/in/pranavgade08/" target="_blank" rel="noreferrer">linkedin.com/in/pranavgade08</a>
+                <div class="email-copy-box">
+                  <a class="social-link" href="mailto:pranavgade0880@gmail.com">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    pranavgade0880@gmail.com
+                  </a>
+                  <button id="copy-email-btn" class="btn btn-ghost btn-sm copy-btn" type="button" aria-label="Copy Email" data-press>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+                <a class="social-link" href="https://github.com/Pranavgade08" target="_blank" rel="noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  github.com/Pranavgade08
+                </a>
+                <a class="social-link" href="https://www.linkedin.com/in/pranavgade08/" target="_blank" rel="noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  linkedin.com/in/pranavgade08
+                </a>
               </div>
             </aside>
           </div>
@@ -320,7 +442,10 @@
     <footer class="footer">
       <div class="container footer-inner">
         <p>© <span id="year"></span> Pranav Gade. All rights reserved.</p>
-        <a class="to-top" href="#top" data-press>Back to top</a>
+        <a class="to-top" href="#top" data-press>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+          Back to top
+        </a>
       </div>
     </footer>
   </body>

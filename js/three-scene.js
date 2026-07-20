@@ -140,6 +140,12 @@
     }
   });
 
+  // Track click for 3D scale burst effect
+  let burstEnergy = 0;
+  container.addEventListener('click', () => {
+    burstEnergy = 1.0;
+  });
+
   // Animation loop
   let time = 0;
   function animate() {
@@ -147,20 +153,27 @@
 
     time += 0.005;
 
+    // Decaying burst energy on click
+    if (burstEnergy > 0) {
+      burstEnergy *= 0.92;
+      if (burstEnergy < 0.001) burstEnergy = 0;
+    }
+
     // Smoothly interpolate towards mouse position (easing)
     targetX += (mouseX - targetX) * 0.05;
     targetY += (mouseY - targetY) * 0.05;
 
-    // Apply rotation based on time and mouse
-    mainGroup.rotation.y = time * 0.5 + targetX * 0.3;
-    mainGroup.rotation.x = time * 0.2 + targetY * 0.3;
+    // Apply rotation based on time, mouse, and click burst energy
+    const rotSpeedMultiplier = 1.0 + burstEnergy * 3.0;
+    mainGroup.rotation.y += 0.005 * rotSpeedMultiplier + (targetX * 0.01);
+    mainGroup.rotation.x = (time * 0.2) + (targetY * 0.3);
 
     // Rotate particles slightly independently
     particleSystem.rotation.y = -time * 0.15;
     particleSystem.rotation.z = time * 0.05;
 
-    // Pulsate Torus Knot sizes slightly
-    const pulse = 1.0 + Math.sin(time * 2) * 0.04;
+    // Pulsate Torus Knot sizes slightly + click burst scale surge
+    const pulse = 1.0 + Math.sin(time * 2) * 0.04 + (burstEnergy * 0.25);
     solidMesh.scale.set(pulse, pulse, pulse);
     wireframeMesh.scale.set(pulse * 1.002, pulse * 1.002, pulse * 1.002);
     wireframeMesh2.scale.set(pulse * 1.008, pulse * 1.008, pulse * 1.008);
@@ -180,3 +193,4 @@
     renderer.setSize(container.clientWidth, container.clientHeight);
   });
 })();
+
